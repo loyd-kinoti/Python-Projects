@@ -1,0 +1,44 @@
+#import libraries
+from bs4 import BeautifulSoup
+import requests
+import smtplib
+import time
+import datetime
+#connect to website
+url="https://www.amazon.com/Data-Systems-Business-Analyst-T-Shirt/dp/B0B8Q8XWRH/ref=sr_1_2?crid=1HOEM030I40QL&dib=eyJ2IjoiMSJ9.0gdHlFOALMlQ3qWtFrYjmVHumUfbeNhorYlD6FFC7cNHr-V6bK5MnENSkrdbj4BCk5LDPqMO81fSshxTBJzUFumaOyh0UXdS-vlOFRDo7ddSZWssSCI6oXz7cArkDvfLpQk3ULZUxMpnEbTr9hVpBk0YVQ6z6aYgGOo-T3n-gtOH2NaqmMvwKevIEjy3PTuVNDWTWCRcrULAJelBmZvwRr6oqfyirsxxvmE_9M06Ln4Skzb8WTeUtQbHLqU1Fo-OOpqXeNMQSa14tHK7Qwn2vr-dCRy28CB1A7Xxh7OIKvs.cO0fUxio98jbMSJOrNoTHTvzvsH8sqsq7ppRqUoZBBg&dib_tag=se&keywords=data%2Banalyst%2Btshirt%2Bfunny%2Bgot%2Bdata%2Bmis%2Bdata%2Bsystems&nsdOptOutParam=true&qid=1772940530&sprefix=data%2Banalyst%2Btshirt%2Bfunny%2Bgot%2Bdata%2Bmis%2Bdata%2Bsystem%2Caps%2C519&sr=8-2&th=1&psc=1"
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "X-Amzn-Trace-Id": "Root=1-69aced64-4118da563b05a75f258d228f"
+}
+page=requests.get(url,headers=headers)
+Soup1=BeautifulSoup(page.content,"html.parser")
+Soup2=BeautifulSoup(Soup1.prettify(),"html.parser")
+
+print(Soup2)
+
+Headers
+
+{
+  "args": {}, 
+  "headers": {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8", 
+    "Accept-Encoding": "gzip, deflate, br, zstd", 
+    "Accept-Language": "en-US,en;q=0.5", 
+    "Host": "httpbin.org", 
+    "Priority": "u=0, i", 
+    "Referer": "https://www.youtube.com/", 
+    "Sec-Ch-Ua": "\"Not:A-Brand\";v=\"99\", \"Brave\";v=\"145\", \"Chromium\";v=\"145\"", 
+    "Sec-Ch-Ua-Mobile": "?0", 
+    "Sec-Ch-Ua-Platform": "\"Windows\"", 
+    "Sec-Fetch-Dest": "document", 
+    "Sec-Fetch-Mode": "navigate", 
+    "Sec-Fetch-Site": "cross-site", 
+    "Sec-Fetch-User": "?1", 
+    "Sec-Gpc": "1", 
+    "Upgrade-Insecure-Requests": "1", 
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36", 
+    "X-Amzn-Trace-Id": "Root=1-69aced64-4118da563b05a75f258d228f"
+  }, 
+  "origin": "102.209.18.230", 
+  "url": "https://httpbin.org/get"
+}
